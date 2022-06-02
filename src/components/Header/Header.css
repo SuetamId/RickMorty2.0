@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  background: -webkit-linear-gradient(to left, #270426, #5d1262);
+  background: linear-gradient(to right, #150915, #330b36);
+
+  padding: 5px 20px;
+
+  align-items: center;
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+
+  position: static;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: rgb(244, 88, 255);
+  transition: 1s;
+}
+
+ul {
+  display: flex;
+  padding-right: 2rem;
+}
+
+li {
+  font-size: 1.2rem;
+  list-style: none;
+  margin-left: 20px;
+  display: flex;
+  padding-left: 10px;
+}
