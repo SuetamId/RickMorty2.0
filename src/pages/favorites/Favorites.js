@@ -8,4 +8,6 @@ const FavoriteCharacter =()=> {
         <h1> Personagens favoritos </h1>
     )
 }
+
+
 export default FavoriteCharacter;
