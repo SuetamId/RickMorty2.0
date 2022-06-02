@@ -1,32 +1,37 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 
+import menuH from "../../assets/img/cardapio.png"
 import "./Header.css";
 
-export default function Header({black}) {
+export default function Header({}) {
 
   return (
-    <div className="container" {...black ? "black" : ""}>
-      <nav>
-        <ul>
-          <li>
+    <>
+    
+      <nav className="nav">
+      <Link to="/"><a className="brand">Rick&Morty</a></Link>
+        <ul className="nav-menu">
+          <li className="nav-item">
             {" "}
             <Link to="/">Home</Link>
-          </li>
-          <li>
+          </li >
+          <li className="nav-item">
             {" "}
             <Link to="/character">Personagens</Link>
           </li>
-          <li>
+          <li className="nav-item">
             {" "}
             <Link to="/favorites">Favoritos</Link>
           </li>
-          <li>
-            {" "}
-            <Link to="/episodes">Episodios</Link>
-          </li>
-        </ul>
+        </ul> 
+        <div className="nav-toggler">
+          <img className="icon" src={menuH} />
+       </div>
       </nav>
-    </div>
+     
+      </>
+   
   );
 }
