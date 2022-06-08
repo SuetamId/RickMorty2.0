@@ -2,21 +2,14 @@
   padding: 0;
   margin: 0;
 }
-
 .nav {
-
   background-color:  #590d59;
-
-
   align-items: center;
   height: 8vh;
   display: flex;
-
   justify-content:space-around ;
-
   gap: 3rem;
 }
-
 .brand{
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -28,28 +21,54 @@
   justify-content: space-around;
   gap: 3rem;
 }
-
-
 li {
   font-size: 1.2rem;
   list-style: none;
-
 }
 a{
   text-decoration: none;
   color: #fff;
 }
+a:hover{
+  color: #ff00ff;
+  transition: 1s;
+}
 .nav-toggler div{
   width: 2.5rem;
   height: 0.6rem;
   margin: 0.4rem;
-  color: #fff;
- 
 } .icon{
   width: 100%;
   width: 35px;
+  display: none;
+  
 }
 .nav-toggler{
   cursor: pointer;
   color:#fff ;
+  display: none;
+}
+@media screen and ( max-width: 768px){
+  .icon{
+    display: block;
+    cursor: pointer;
+  }
+  .nav-menu{
+    position:absolute;
+    top: 6vh;
+    width: 45%;
+    height:50% ;
+    right: 0;
+    background-color: #590d59;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    transform: translateX(100%);
+  }
+}
+.nav-active{
+  transform: translateX(0);
+  transition: 0.9s;
+
 }
