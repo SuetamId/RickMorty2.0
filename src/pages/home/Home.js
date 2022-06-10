@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Fundo from "../../assets/img/RickMortyFundo.jpg"
+
 import "./Home.css"
 
 
 export default function Home() {
   return (
     <div>
-      <div className="img-wrapper">
-        <img src={Fundo} />
-      </div>
+
       <div className="img-wrapper-mobile">
       </div>
       <div className="banner">

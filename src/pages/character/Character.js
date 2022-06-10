@@ -1,11 +1,13 @@
+
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import api from "../../services/api";
+import bootstrap from 'bootstrap'
 
 import "./Character.css";
 
-const Character = () => {
+function Character() {
   const [character, setCharacter] = useState([]);
   const [info, setInfo] = useState({});
   const [search, setSearch] = useState([]);
@@ -21,7 +23,13 @@ const Character = () => {
         console.log(error);
       });
   }, []);
-
+  // const handleNextPage = () => {
+  //   Character(info.next);
+  // };
+  // //função para lidar a paginação(next page)
+  // const handlePreviousPage = () => {
+  //   Character(info.prev);
+  // };
   return (
     <div className="container-character">
       <div className="character-search">
@@ -37,11 +45,10 @@ const Character = () => {
           .filter((value) => {
             if (search == "") {
               return value;
-            } else if (
-              value.name.toLowerCase().includes(search.toLowerCase())
-            ) {
+            } else if (value.name.toLowerCase().includes(search.toLowerCase())) {
               return value;
             }
+
           })
           .map((character, key) => {
             return (
@@ -50,20 +57,44 @@ const Character = () => {
                   <div className="card-img-wrapper">
                     <img src={character.image} />
                   </div>
-                  <div className="btn-fovorite">
-                    <button class="bi bi-suit-heart">o</button></div>
+                  {/* <div className="btn-fovorite">
+                          <button class="bi bi-suit-heart">o</button></div> */}
                   <div className="info">
                     <h1 className="title">{character.name}</h1> <br />
-                    <p className="status">{character.status}</p>
+                    {(() => {
+                      if (character.status === "Alive") {
+                        return (
+                          <p className="text-alive">{character.status}</p>);
+
+                      } else if (character.status === "Dead") {
+                        return (<p className="text-Dead">{character.status}</p>);
+
+                      } else {
+                        return (
+                          (<p className="text-Dead">{character.status}</p>)
+                        );
+                      }
+                    })}
+
                     <p className="species">{character.species}</p>
                     <p className="location">{character.location.name}</p>
                   </div>
                 </section>
+
               </>
             );
           })}
       </div>
+      <div className="btn-pagigation-wrapper">
+
+        <button>ANTERIOR</button>
+
+        <button>PROXIMO</button>
+
+      </div>
+
     </div>
+
   );
-};
+}
 export default Character;

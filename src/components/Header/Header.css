@@ -59,13 +59,22 @@ a:hover{
     width: 45%;
     height:50% ;
     right: 0;
-    background-color: #590d59;
+    background-color: #c19bc4;
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items:center ;
     transform: translateX(100%);
   }
+  .nav {
+    background-color:  #c19bc4;
+    align-items: center;
+    height: 8vh;
+    display: flex;
+    justify-content:space-around ;
+    gap: 3rem;
+  }
+
 }
 .nav-active{
   transform: translateX(0);
